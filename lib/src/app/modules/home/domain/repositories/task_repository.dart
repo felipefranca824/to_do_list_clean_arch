@@ -6,4 +6,5 @@ abstract class ITaskRepository {
   Future<Either<Failure, List<TaskEntity>>> getAllTasks();
   Future<Either<Failure, bool>> saveTask({required TaskEntity taskEntity});
   Future<Either<Failure, bool>> deleteTask({required TaskEntity taskEntity});
+  Future<Either<Failure, bool>> updateTask({required TaskEntity taskEntity});
 }

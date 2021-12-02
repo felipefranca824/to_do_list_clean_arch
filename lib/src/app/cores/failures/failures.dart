@@ -24,3 +24,11 @@ class DeleteTaskFailure extends Failure {
   @override
   List<Object?> get props => [error];
 }
+
+class UpdateTaskFailure extends Failure {
+  final String error;
+
+  UpdateTaskFailure({required this.error});
+  @override
+  List<Object?> get props => [error];
+}
