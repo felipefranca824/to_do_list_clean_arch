@@ -9,7 +9,7 @@ import 'package:to_do_list_clean/src/app/modules/home/domain/usecases/get_all_ta
 class MockTaskRepository extends Mock implements ITaskRepository {}
 
 void main() {
-  late GetAllTaskUsecaseInterface usecase;
+  late IGetAllTaskUsecase usecase;
   late ITaskRepository repository;
 
   setUp(() {

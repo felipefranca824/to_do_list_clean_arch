@@ -4,4 +4,5 @@ import 'package:to_do_list_clean/src/app/modules/home/domain/entities/task_entit
 
 abstract class ITaskRepository {
   Future<Either<Failure, List<TaskEntity>>> getAllTasks();
+  Future<Either<Failure, bool>> saveTask({required TaskEntity taskEntity});
 }
