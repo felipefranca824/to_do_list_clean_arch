@@ -1,4 +1,6 @@
-class TaskEntity {
+import 'package:equatable/equatable.dart';
+
+class TaskEntity extends Equatable {
   final String id;
   final String title;
   final bool isFinished;
@@ -11,4 +13,12 @@ class TaskEntity {
       this.isFinished = false});
 
   bool get isValidName => title.length >= 5 && title.length <= 50;
+
+  @override
+  List<Object?> get props => [
+        id,
+        date,
+        isFinished,
+        title,
+      ];
 }
