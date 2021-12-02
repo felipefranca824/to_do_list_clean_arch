@@ -17,3 +17,10 @@ class SaveTaskFailure extends Failure {
         error,
       ];
 }
+
+class DeleteTaskFailure extends Failure {
+  final String error;
+  DeleteTaskFailure({required this.error});
+  @override
+  List<Object?> get props => [error];
+}
