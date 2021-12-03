@@ -1,5 +1,5 @@
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:to_do_list_clean/src/app/modules/home/home_module.dart';
+import 'package:to_do_list_clean/src/app/modules/home/presenter/home_module.dart';
 
 class AppModule extends Module {
   @override
