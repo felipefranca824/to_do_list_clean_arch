@@ -1,5 +1,6 @@
 import 'package:to_do_list_clean/src/app/cores/exceptions/exceptions.dart';
 import 'package:to_do_list_clean/src/app/modules/home/data/datasource/task_datasource.dart';
+import 'package:to_do_list_clean/src/app/modules/home/data/models/task_model.dart';
 import 'package:to_do_list_clean/src/app/modules/home/domain/entities/task_entity.dart';
 import 'package:to_do_list_clean/src/app/cores/failures/failures.dart';
 import 'package:dartz/dartz.dart';
@@ -27,9 +28,14 @@ class TaskRepositoryImplementation implements ITaskRepository {
   }
 
   @override
-  Future<Either<Failure, bool>> saveTask({required TaskEntity taskEntity}) {
-    // TODO: implement saveTask
-    throw UnimplementedError();
+  Future<Either<Failure, bool>> saveTask(
+      {required TaskEntity taskEntity}) async {
+    try {
+      final result = await datasource.saveTask(taskEntity: taskEntity);
+      return Right(result);
+    } on SaveTaskException {
+      return Left(SaveTaskFailure(error: 'error'));
+    }
   }
 
   @override
